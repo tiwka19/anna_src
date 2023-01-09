@@ -1,0 +1,25 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.page {
+  @include adaptiveValue("padding-top", 90, 70);
+}
+
+section {
+  @include adaptiveValue("padding-top", 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
+}
+
+._title {
+  font-family: "Playfair Display";
+  @include adaptiveValue("font-size", 32, 22);
+  line-height: math.div(43, 32);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #010101;
+    left: 0;
+    @include adaptiveValue("height", 5, 3);
+    width: rem(50);
+    top: rem(-15);
+  }
+}
